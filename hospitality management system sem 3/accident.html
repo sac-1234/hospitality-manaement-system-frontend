@@ -1,0 +1,107 @@
+<html>
+<head>
+    <title>
+        accident alert
+    </title>
+    <style>
+        body{
+              background-image: url('a9.jpg');
+              background-repeat: no-repeat;
+              background-size: 100%;
+              background-attachment: fixed; 
+        }
+    </style>
+</head>
+<body>
+    <b>
+        <h3 style="color: black;">
+            <a style="padding-right : 30px;color: #000;" href="hms.html">HOME</a>
+          <a style="padding-right : 30px;color: #000;" href="vaccination registration.html">VACCINE REGISTRATION</a>
+          <a style="padding-right: 30px;color: #000;" href="accident.html">ACCIDENT ALERT</a>    
+          <a style="padding-right: 30px;color: #000;" href="covid check.html">COVID CHECK</a>
+          <a style="padding-right: 30px;color: #000;" href="covid test.html">COVID TEST</a>    
+          <a style="padding-right: 30px;color: #000;" href="doctor.html">DOCTORS APPOINTMENT </a>
+          <a style="padding-right: 30px;color: #000;" href="about.html">ABOUT</a>    
+     
+         <p style="border-color: black;background-color: burlywood;"> <marquee direction="right">All Rights are reserved to government of india</marquee></h5></marquee>
+          </h3>
+        </b>
+        <div style="padding-left: 250px;">
+            <table style="padding: 30px;">
+                <th style="width: 350px;">               </th><th></th>
+                <br>
+                <tr style="margin-top: 20%;">
+        <td > <label> Enter Name </label></td><td>        </td> <td><input type="text"></td>
+        </tr>  
+        <tr style="margin-top: 20%;">
+            <td><label> Mobile no.</label></td><td></td></td><td><input type="tel",name="telephone" pattern="[0-9]{10}" title="ten digit code"></td>
+        </tr>
+        <tr style="margin-top: 20%;">
+            <td><label> Age</label></td><td></td></td><td><input type="text",name="age"></td>
+        </tr>
+        
+</table> 
+<p style="padding-left: 250px;">
+        <button style="font-size: 15px; background-color:transparent;" onclick="getlocation();"> Track the location</button>   </p>
+        <div id="demo" style="width: 600px; height: 400px; margin-left: 200px;"></div>  
+        <script src="https://maps.google.com/maps/api/js?sensor=false"> </script>   
+
+        <script type="text/javascript">   
+            function getlocation(){   
+                if(navigator.geolocation){   
+                    navigator.geolocation.getCurrentPosition(showPos, showErr);   
+                }  
+                else{  
+                    alert("Sorry! your Browser does not support Geolocation API")  
+                }  
+            }   
+            //Showing Current Poistion on Google Map  
+            function showPos(position){   
+                latt = position.coords.latitude;   
+                long = position.coords.longitude;   
+                var lattlong = new google.maps.LatLng(latt, long);   
+                var myOptions = {   
+                    center: lattlong,   
+                    zoom: 15,   
+                    mapTypeControl: true,   
+                    navigationControlOptions: {style:google.maps.NavigationControlStyle.SMALL}   
+                }   
+                var maps = new google.maps.Map(document.getElementById("demo"), myOptions);   
+                var markers =   
+                new google.maps.Marker({position:lattlong, map:maps, title:"You are here!"});   
+            }   
+      
+            //Handling Error and Rejection  
+                 function showErr(error) {  
+                  switch(error.code){  
+                  case error.PERMISSION_DENIED:  
+                 alert("User denied the request for Geolocation API.");  
+                  break;  
+                 case error.POSITION_UNAVAILABLE:  
+                 alert("USer location information is unavailable.");  
+                break;  
+                case error.TIMEOUT:  
+                alert("The request to get user location timed out.");  
+                break;  
+               case error.UNKNOWN_ERROR:  
+                alert("An unknown error occurred.");  
+                break;  
+               }  
+       
+       }
+       
+       </script> 
+       </div>  
+       <div>
+        <p>
+            <table><th><div style="padding-left: 250px;"><iframe  width="800" height="500"
+              src="https://www.youtube.com/embed/o9_tRbUKMmM?controls=4&autoplay=">
+              </iframe></th><th></div>
+            </th>
+            </p>
+            
+    </div>
+</body>
+
+
+</html>
